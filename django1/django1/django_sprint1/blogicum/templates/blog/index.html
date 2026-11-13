@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Блогикум</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Блогикум</h1>
+      {% for post in posts reversed %}
+      <article class="mb-5">
+        <h3>{{ post.location }}</h3>
+        <p>{{ post.date }}</p>
+        <p>{{ post.text|truncatewords:10 }}</p>
+        <a href="{% url 'blog:post_detail' post.id %}">Читать полный текст</a>
+      </article>
+      {% endfor %}
+    </main>
+  </body>
+</html>

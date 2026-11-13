@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Блогикум</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Блогикум</h1>
+      <article>
+        <h2>{{ post.location }}</h2>
+        <p>{{ post.date }}</p>
+        <p>{{ post.text }}</p>
+      </article>
+    </main>
+  </body>
+</html>
